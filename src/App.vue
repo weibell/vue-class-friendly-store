@@ -1,28 +1,41 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <!-- Counter -->
+    <h1>Counter</h1>
+    <p>Counter: {{ $store.getCounter() }} (marked as "do not observe")</p>
+
+    <p><button @click="$store.incCounter()">Increase Counter</button></p>
+    <p><button @click="logCounter">console.log(getCounter())</button></p>
+
+    <!-- Person -->
+    <h1>Person (observed)</h1>
+    <ul>
+      <li v-for="(person, index) in $store.getPeople()" :key="index">
+        Name: {{ person.name }}, age: {{ person.age }}
+      </li>
+    </ul>
+
+    <p v-if="$store.getPeople().length > 0">
+      Average age: {{ $store.getAvgAge() }}
+    </p>
+
+    <p>
+      <button @click="$store.createRandomPerson()">Add Entry</button>
+    </p>
+    <p>
+      <button @click="$store.getPerson(0).setAge(1)">Increase #1's age</button>
+    </p>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
 export default {
   name: 'app',
-  components: {
-    HelloWorld
+
+  methods: {
+    logCounter() {
+      console.log(this.$store.getCounter())
+    }
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
