@@ -36,6 +36,10 @@ export default {
     logCounter() {
       console.log(this.$store.getCounter())
     }
+  },
+
+  created() {
+    window.$store = this.$store // debug
   }
 }
 </script>

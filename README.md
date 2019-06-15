@@ -25,7 +25,8 @@ This approach comes with a few drawbacks:
 - Asynchronous methods (e.g. fetching data from a URL) will likely cause issues. [Vuex](https://vuex.vuejs.org/)' actions handle this nicely.
 - It does not offer any of the State Management features that [Vuex](https://vuex.vuejs.org/) offers.
 - Data structures such as `Map`, `Set` still cannot be observed (though this is [planned for Vue.js 3.0](https://medium.com/the-vue-point/plans-for-the-next-iteration-of-vue-js-777ffea6fabf)).
-But it does work for reactive properties of custom objects (see class `Person` in the example), and there are some [hacky workarounds](https://github.com/vuejs/vue/issues/2410#issuecomment-318487855) that could be used to make `Maps` and the like work. 
+But it does work for reactive properties of custom objects (see class `Person` in the example), and there are some [hacky workarounds](https://github.com/vuejs/vue/issues/2410#issuecomment-318487855) that could be used to make `Maps` and the like work.
+- No browser developer tools support (other than querying `$store`, if that reference was created) 
 
 
 ## Inspiration and further reading
