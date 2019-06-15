@@ -23,7 +23,7 @@
       <button @click="$store.createRandomPerson()">Add Entry</button>
     </p>
     <p>
-      <button @click="$store.getPerson(0).setAge(1)">Increase #1's age</button>
+      <button @click="$store.getPerson(0).age++">Increase #1's age</button>
     </p>
   </div>
 </template>

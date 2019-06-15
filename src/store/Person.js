@@ -14,8 +14,4 @@ export class Person {
   get name() {
     return this.#name.charAt(0).toUpperCase() + this.#name.slice(1)
   }
-
-  setAge(age) {
-    this.age = age
-  }
 }
