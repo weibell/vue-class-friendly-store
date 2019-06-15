@@ -4,6 +4,9 @@ const properties = {
 }
 
 const getters = {
+  /**
+   * @returns {number}
+   */
   getCounter() {
     return this._counter
   }

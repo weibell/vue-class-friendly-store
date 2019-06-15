@@ -1,20 +1,33 @@
 import { Person } from './Person'
 
 const properties = {
+  /**
+   * @type {Person[]}
+   */
   _people: []
 }
 
 const getters = {
+  /**
+   * @returns {Person[]}
+   */
   getPeople() {
     return this._people
   },
 
+  /**
+   * @param {number} index
+   * @returns {Person}
+   */
   getPerson(index) {
     return this._people[index]
   }
 }
 
 const methods = {
+  /**
+   * @param {Person} person
+   */
   addPerson(person) {
     this._people.push(person)
   },

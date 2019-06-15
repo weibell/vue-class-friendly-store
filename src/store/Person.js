@@ -1,5 +1,9 @@
 export class Person {
+
+  /** @type {string} */
   #name
+
+  /** @type {number} */
   age
 
   constructor({ name, age }) {
